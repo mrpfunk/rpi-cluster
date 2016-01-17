@@ -1,26 +1,27 @@
-"Download rpi-nginx":
+"Download postgres":
   dockerng.image_present:
-    - name: akkerman/rpi-nginx
-    - require:
-      - pip: "docker-py"
+    - name: joherma1/rpi-postgres
 
-"Run nginx-vhost":
+/var/postgres:
+  file.directory:
+    - dir_mode: 755
+    - makedirs: True
+
+"Run postgres":
   dockerng.running:
-    - name: nginx-vhost
+    - name: postgres
     - restart_policy: always
-    - image: akkerman/rpi-nginx
+    - image: joherma1/rpi-postgres
     - ports:
-      - 80/tcp
-      - 443/tcp
-    - binds:
-      - /srv/salt/nginx-vhost/default.conf:/etc/nginx/conf.d/default.conf:ro
-      - /srv/salt/nginx-vhost/ssl:/etc/nginx/ssl:ro
-      - /srv/salt/nginx-vhost/nginx.conf:/etc/nginx/nginx.conf:ro
+      - 5432/tcp
     - port_bindings:
-      - 80:80/tcp
-      - 443:443/tcp
-    - dns:
-      - 8.8.8.8
-      - 8.8.4.4
+      - 5432:5432/tcp
+    - binds:
+      - /var/postgres:/data
+    - environment:
+      - POSTGRES_USERNAME: postgres
+      - POSTGRES_PASSWORD: postgres
     - require:
-      - dockerng: "Download rpi-nginx"
+      - file: /var/postgres
+      - dockerng: "Download postgres"
+
