@@ -1,0 +1,2 @@
+dd bs=4M if=YOURIMAGE.img of=/dev/sdd
+
