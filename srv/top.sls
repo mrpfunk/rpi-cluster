@@ -8,6 +8,6 @@ base:
 
   'db01':
     # - nginx-proxy
-    # - postgres
+    - postgres
     - gogs
 
