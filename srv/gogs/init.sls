@@ -21,6 +21,8 @@
       - /var/gogs:/data
     - port_bindings:
       - 3000:3000/tcp
+    - links:
+      - postgres:postgres
     - dns:
       - 8.8.8.8
       - 8.8.4.4
