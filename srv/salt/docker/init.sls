@@ -15,5 +15,11 @@ docker-py:
     - require:
       - pip: "Python pip"
 
+dateutil-py:
+  pip.installed:
+    - name: python-dateutil 
+    - require:
+      - pip: "Python pip"
+
 docker:
   service.running
