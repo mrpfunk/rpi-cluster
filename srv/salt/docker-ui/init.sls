@@ -8,6 +8,7 @@
   dockerng.running:
     - name: docker-ui 
     - privileged: True
+    - detach: True
     - restart_policy: always
     - image: hypriot/rpi-dockerui
     - ports:
