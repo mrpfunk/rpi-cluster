@@ -16,6 +16,7 @@
       - /srv/salt/nginx-vhost/default.conf:/etc/nginx/conf.d/default.conf:ro
       # - /srv/salt/nginx-vhost/ssl:/etc/nginx/ssl:ro
       - /srv/salt/nginx-vhost/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /srv/salt/nginx-vhost/root:/usr/share/nginx/html:ro
     - port_bindings:
       - 80:80/tcp
       - 443:443/tcp
