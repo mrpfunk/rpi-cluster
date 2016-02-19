@@ -45,7 +45,7 @@ sudo sed -i 's/black-pearl/${HOSTNAME}/g' /etc/hosts
 sudo /etc/init.d/hostname.sh start
 
 # Setup a user
-echo "Setup usr manuel:rootbig456"
+echo "Setup usr manuel"
 sudo useradd -m -s /bin/bash manuel
 echo manuel:${PASSWORD} | sudo chpasswd
 echo 'manuel ALL=(ALL) ALL' >> /etc/sudoers
