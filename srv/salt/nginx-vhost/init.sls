@@ -1,6 +1,6 @@
 "Download rpi-nginx":
   dockerng.image_present:
-    - name: akkerman/rpi-nginx
+    - name: tomgeorge/rpi-nginx
     - require:
       - pip: "docker-py"
 
@@ -8,7 +8,7 @@
   dockerng.running:
     - name: nginx-vhost
     - restart_policy: always
-    - image: akkerman/rpi-nginx
+    - image: tomgeorge/rpi-nginx
     - ports:
       - 80/tcp
       - 443/tcp
