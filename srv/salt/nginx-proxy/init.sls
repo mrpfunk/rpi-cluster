@@ -14,7 +14,7 @@
     - port_bindings:
       - 80:80/tcp
     - binds:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/tmp/docker.sock
     - require:
       - dockerng: "Download nginx-proxy"
 
