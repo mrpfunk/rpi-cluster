@@ -7,7 +7,8 @@ base:
     # - nginx-proxy
 
   'db01':
-    # - nginx-proxy
+    - nginx-proxy
+    - web
     - postgres
     - gogs
 
