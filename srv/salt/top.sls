@@ -11,4 +11,5 @@ base:
     - web
     - postgres
     - gogs
+    - drone
 
