@@ -4,6 +4,11 @@
     - require:
       - pip: "docker-py"
 
+/var/docker/persistent/registry:
+  file.directory:
+    - dir_mode: 700
+    - makedirs: True
+
 "Run registry":
   dockerng.running:
     - name: registry 
@@ -19,9 +24,10 @@
       # - MIRROR_SOURCE_INDEX: 'https://index.docker.io'
       # - VIRTUAL_HOST: 'drone.db01.freakhome.ddnss.de'
     - binds:
-      - /var/docker/registry:/tmp/registry
+      - /var/docker/persistent/registry:/tmp/registry
     - dns:
       - 8.8.8.8
       - 8.8.4.4
     - require:
+      - file: /var/docker/persistent/registry
       - dockerng: "Download nimblestratus/rpi-docker-registry"

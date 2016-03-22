@@ -4,7 +4,7 @@
     - require:
       - pip: "docker-py"
 
-/var/docker/gogs:
+/var/docker/persistent/gogs:
   file.directory:
     - dir_mode: 755
     - makedirs: True
@@ -18,7 +18,7 @@
       - 22/tcp
       - 3000/tcp
     - binds:
-      - /var/docker/gogs:/data
+      - /var/docker/persistent/gogs:/data
     - port_bindings:
       - 3000:3000/tcp
     - links:
@@ -27,7 +27,7 @@
       - 8.8.8.8
       - 8.8.4.4
     - require:
-      - file: "/var/docker/gogs"
+      - file: "/var/docker/persistent/gogs"
       - dockerng: "Download gogs/gogs"
 
 # sudo docker run -it --link postgres:postgres --rm postgres sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres'

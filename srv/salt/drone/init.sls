@@ -4,6 +4,11 @@
     - require:
       - pip: "docker-py"
 
+/var/docker/persistent/drone:
+  file.directory:
+    - dir_mode: 755
+    - makedirs: True
+
 "Run drone":
   dockerng.running:
     - name: drone
@@ -24,11 +29,12 @@
       # - VIRTUAL_HOST: 'drone.db01.freakhome.ddnss.de'
     - binds:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /var/lib/drone:/var/lib/drone
+      - /var/docker/persistent/drone:/var/lib/drone
     - links:
       - gogs:gogs
     - dns:
       - 8.8.8.8
       - 8.8.4.4
     - require:
+      - file: "/var/docker/persistent/drone"
       - dockerng: "Download drone/drone"

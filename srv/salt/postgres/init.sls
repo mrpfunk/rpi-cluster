@@ -7,7 +7,7 @@
     - dir_mode: 700
     - makedirs: True
 
-/var/docker/pg:
+/var/docker/persistent/pg:
   file.directory:
     - dir_mode: 700
     - makedirs: True
@@ -28,10 +28,10 @@
       - POSTGRES_PASSWORD: {{ salt['pillar.get']('postgres:pgpass', 'postgres') }}
     - require:
       - file: /var/docker/postgres
-      - file: /var/docker/pg
+      - file: /var/docker/persistent/pg
       - dockerng: "Download postgres"
   cmd.wait:
-    - name: 'echo "postgres:5432:*:postgres:{{ salt['pillar.get']('postgres:pgpass', 'postgres') }}" > /var/docker/pg/.pgpass && chmod 0600 /var/docker/pg/.pgpass' 
+    - name: 'echo "postgres:5432:*:postgres:{{ salt['pillar.get']('postgres:pgpass', 'postgres') }}" > /var/docker/persistent/pg/.pgpass && chmod 0600 /var/docker/persistent/pg/.pgpass' 
     - watch:
       - dockerng: "Run postgres"
    
