@@ -12,4 +12,5 @@ base:
     - postgres
     - gogs
     - drone
+    - registry
 
