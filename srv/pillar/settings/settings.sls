@@ -1,0 +1,2 @@
+domain:
+  name: 'flitzehack.de'
