@@ -19,7 +19,6 @@
     - port_bindings:
       - 5000:5000/tcp
     # - environment:
-      # - DOCKER_OPTS: '--insecure-registry 192.168.1.61:5000'
       # - MIRROR_SOURCE_INDEX: 'https://index.docker.io'
       # - VIRTUAL_HOST: "registry.db01.{{ salt['pillar.get']('domain:name') }}"
     - binds:
