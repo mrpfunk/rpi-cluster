@@ -26,7 +26,7 @@
       - DATABASE_DRIVER: sqlite3
       - DATABASE_CONFIG: /var/lib/drone/drone.sqlite
       # - DOCKER_OPTS: '--insecure-registry 192.168.1.61:5000'
-      # - VIRTUAL_HOST: 'drone.db01.freakhome.ddnss.de'
+      # - VIRTUAL_HOST: "drone.db01.{{ salt['pillar.get']('domain:name') }}"
     - binds:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/docker/persistent/drone:/var/lib/drone

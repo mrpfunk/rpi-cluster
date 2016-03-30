@@ -18,11 +18,10 @@
       - 5000/tcp
     - port_bindings:
       - 5000:5000/tcp
-    - environment:
-        - BLABLA: 'bla'
+    # - environment:
       # - DOCKER_OPTS: '--insecure-registry 192.168.1.61:5000'
       # - MIRROR_SOURCE_INDEX: 'https://index.docker.io'
-      # - VIRTUAL_HOST: 'drone.db01.freakhome.ddnss.de'
+      # - VIRTUAL_HOST: "registry.db01.{{ salt['pillar.get']('domain:name') }}"
     - binds:
       - /var/docker/persistent/registry:/tmp/registry
     - dns:

@@ -14,7 +14,8 @@
       - 80/tcp
       - 443/tcp
     - environment:
-      - VIRTUAL_HOST: 'bla.db01.freakhome.ddnss.de'
+      # - VIRTUAL_HOST: 'bla.db01.flitzehack.de'
+      - VIRTUAL_HOST: "bla.db01.{{ salt['pillar.get']('domain:name') }}"
     - dns:
       - 8.8.8.8
       - 8.8.4.4
