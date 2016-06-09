@@ -14,4 +14,5 @@ base:
     - gogs
     - drone
     - registry
+    # - crossbar
 
