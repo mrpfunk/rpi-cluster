@@ -1,8 +1,6 @@
 "Download nimblestratus/rpi-docker-registry":
   dockerng.image_present:
     - name: 'nimblestratus/rpi-docker-registry'
-    - require:
-      - pip: "docker-py"
 
 /var/docker/persistent/registry:
   file.directory:

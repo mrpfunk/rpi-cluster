@@ -1,8 +1,6 @@
 "Download hypriot/rpi-dockerui":
   dockerng.image_present:
     - name: 'hypriot/rpi-dockerui'
-    - require:
-      - pip: "docker-py"
 
 "Run docker-ui":
   dockerng.running:

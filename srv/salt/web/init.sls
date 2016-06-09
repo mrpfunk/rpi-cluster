@@ -1,8 +1,6 @@
 "Download rpi-nginx":
   dockerng.image_present:
     - name: tomgeorge/rpi-nginx
-    - require:
-      - pip: "docker-py"
 
 "Run nginx-vhost":
   dockerng.running:

@@ -1,8 +1,6 @@
 "Download nginx-proxy":
   dockerng.image_present:
     - name: bestlibre/rpi-nginx-proxy:bin
-    - require:
-      - pip: "docker-py"
 
 "Run nginx-proxy":
   dockerng.running:

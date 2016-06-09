@@ -1,8 +1,6 @@
 "Download drone/drone":
   dockerng.image_present:
     - name: 'armhfbuild/drone'
-    - require:
-      - pip: "docker-py"
 
 /var/docker/persistent/drone:
   file.directory:

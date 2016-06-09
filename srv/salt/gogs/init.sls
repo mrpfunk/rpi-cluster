@@ -1,8 +1,6 @@
 "Download gogs/gogs":
   dockerng.image_present:
     - name: 'hypriot/rpi-gogs-raspbian'
-    - require:
-      - pip: "docker-py"
 
 /var/docker/persistent/gogs:
   file.directory:
