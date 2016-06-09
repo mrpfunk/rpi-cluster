@@ -1,5 +1,6 @@
 base:
   '*':
+    - basics
     - docker
 
   'master':
