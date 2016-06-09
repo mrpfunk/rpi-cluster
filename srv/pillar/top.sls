@@ -6,6 +6,7 @@ base:
 
   'master':
     - schedule.backup_master
+    - schedule.regen_certs
 
   'db01':
     - creds.postgres

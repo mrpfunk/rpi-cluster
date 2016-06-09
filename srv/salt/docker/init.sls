@@ -21,5 +21,11 @@ dateutil-py:
     - require:
       - pip: "Python pip"
 
+croniter-py:
+  pip.installed:
+    - name: croniter
+    - require:
+      - pip: "Python pip"
+
 docker:
   service.running
