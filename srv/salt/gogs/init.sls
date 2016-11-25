@@ -1,6 +1,6 @@
 "Download gogs/gogs":
   dockerng.image_present:
-    - name: 'hypriot/rpi-gogs-raspbian'
+    - name: 'gogs/gogs'
 
 /var/docker/persistent/gogs:
   file.directory:
@@ -11,7 +11,7 @@
   dockerng.running:
     - name: gogs
     - restart_policy: always
-    - image: hypriot/rpi-gogs-raspbian
+    - image: gogs/gogs
     - ports:
       - 22/tcp
       - 3000/tcp

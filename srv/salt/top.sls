@@ -3,6 +3,10 @@ base:
     - basics
     - docker
 
+  'kk':
+    - postgres
+    - gogs
+
   'master':
     - nginx-vhost
     # - nginx-proxy

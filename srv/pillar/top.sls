@@ -2,7 +2,7 @@ base:
 
   '*':
     - creds.docker
-    - settings.settings
+#    - settings.settings
 
   'master':
     - schedule.backup_master

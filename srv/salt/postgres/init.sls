@@ -1,6 +1,6 @@
 "Download postgres":
   dockerng.image_present:
-    - name: ldouchy/rpi-postgres
+    - name: postgres
 
 /var/docker/postgres:
   file.directory:
@@ -16,7 +16,7 @@
   dockerng.running:
     - name: postgres
     - restart_policy: always
-    - image: ldouchy/rpi-postgres
+    - image: postgres
     - ports:
       - 5432/tcp
     - port_bindings:
