@@ -23,7 +23,7 @@ schedule:
          && cp /var/docker/persistent/nginx-vhost/ssl/flitzehack.de/*.pem /var/docker/persistent/nginx-vhost/ssl/certs/ \
          && rm -r /var/docker/persistent/nginx-vhost/ssl/flitzehack.de \
          && docker rm -f nginx-vhost \
-         && salt-call state.apply nginx-vhost
+         && salt-call state.apply nginx-vhost"
     kwargs:
       stateful: False
       shell: /bin/sh
