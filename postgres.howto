@@ -1,12 +1,12 @@
 Connect to db:
-	docker run -it -v /root:/root --link postgres:postgres --rm ldouchy/rpi-postgres sh -c 'exec psql -h postgres -U postgres'
+	docker run -it -v /var/docker/persistent/pg:/root --link postgres:postgres --rm postgres sh -c 'exec psql -h postgres -U postgres'
 
 Create gogs db:
 	CREATE USER gogs WITH PASSWORD 'gogs'; CREATE DATABASE gogs OWNER gogs; GRANT ALL PRIVILEGES ON DATABASE gogs TO gogs;
 
 pg_dump:
-	docker run --link postgres:postgres -v /root:/root --rm ldouchy/rpi-postgres sh -c 'pg_dumpall -h postgres -U postgres' > pg.dump
+	docker run --link postgres:postgres -v /var/docker/persistent/pg:/root --rm postgres sh -c 'pg_dumpall -h postgres -U postgres' > pg.dump
 
 restore:
-	docker run --link postgres:postgres -v /root:/root --rm ldouchy/rpi-postgres sh -c 'psql -h postgres -U postgres < /root/pg.dump'
+	docker run --link postgres:postgres -v /var/docker/persistent/pg:/root --rm postgres sh -c 'psql -h postgres -U postgres < /root/pg.dump'
 

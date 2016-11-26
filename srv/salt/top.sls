@@ -4,6 +4,7 @@ base:
     - docker
 
   'kk':
+    - nginx-vhost
     - postgres
     - gogs
 

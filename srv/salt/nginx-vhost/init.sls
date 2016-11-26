@@ -1,12 +1,12 @@
-"Download rpi-nginx":
+"Download nginx":
   dockerng.image_present:
-    - name: tomgeorge/rpi-nginx
+    - name: nginx
 
 "Run nginx-vhost":
   dockerng.running:
     - name: nginx-vhost
     - restart_policy: always
-    - image: tomgeorge/rpi-nginx
+    - image: nginx
     - ports:
       - 80/tcp
       - 443/tcp
@@ -24,4 +24,4 @@
       - 8.8.8.8
       - 8.8.4.4
     - require:
-      - dockerng: "Download rpi-nginx"
+      - dockerng: "Download nginx"
