@@ -1,6 +1,6 @@
 "Download drone/drone":
   dockerng.image_present:
-    - name: 'armhfbuild/drone'
+    - name: 'drone/drone'
 
 /var/docker/persistent/drone:
   file.directory:
@@ -11,7 +11,7 @@
   dockerng.running:
     - name: drone
     - restart_policy: always
-    - image: armhfbuild/drone
+    - image: drone/drone
     - hostname: drone
     - privileged: True
     - ports:
@@ -30,7 +30,7 @@
     - links:
       - gogs:gogs
     - dns:
-      - 8.8.8.8
+      - 192.168.2.254
       - 8.8.4.4
     - require:
       - file: "/var/docker/persistent/drone"

@@ -14,7 +14,7 @@
     - environment:
       - VIRTUAL_HOST: "c1.db01.{{ salt['pillar.get']('domain:name') }}"
     - dns:
-      - 8.8.8.8
+      - 192.168.2.254
       - 8.8.4.4
     - require:
       - dockerng: "Download rpi-crossbar"

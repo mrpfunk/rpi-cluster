@@ -1,6 +1,6 @@
-"Download nimblestratus/rpi-docker-registry":
+"Download registry":
   dockerng.image_present:
-    - name: 'nimblestratus/rpi-docker-registry'
+    - name: registry
 
 /var/docker/persistent/registry:
   file.directory:
@@ -11,7 +11,7 @@
   dockerng.running:
     - name: registry 
     - restart_policy: always
-    - image: nimblestratus/rpi-docker-registry
+    - image: registry
     - ports:
       - 5000/tcp
     - port_bindings:
@@ -22,8 +22,8 @@
     - binds:
       - /var/docker/persistent/registry:/tmp/registry
     - dns:
-      - 8.8.8.8
+      - 192.168.2.254
       - 8.8.4.4
     - require:
       - file: /var/docker/persistent/registry
-      - dockerng: "Download nimblestratus/rpi-docker-registry"
+      - dockerng: "Download registry"

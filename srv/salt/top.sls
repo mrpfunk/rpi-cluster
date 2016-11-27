@@ -4,20 +4,13 @@ base:
     - docker
 
   'kk':
+    - bind
     - nginx-vhost
     - postgres
     - gogs
-
-  'master':
-    - nginx-vhost
-    # - nginx-proxy
-
-  'db01':
-    - nginx-proxy
-    - web
-    - postgres
-    - gogs
-    - drone
     - registry
+    - drone
+    # - nginx-proxy
+    # - web
     # - crossbar
 
