@@ -22,7 +22,7 @@
     - binds:
       - /var/docker/persistent/registry:/tmp/registry
     - dns:
-      - 192.168.2.254
+      - 8.8.8.8
       - 8.8.4.4
     - require:
       - file: /var/docker/persistent/registry

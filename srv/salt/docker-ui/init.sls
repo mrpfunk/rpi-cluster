@@ -16,7 +16,7 @@
     - port_bindings:
       - 9000:9000/tcp
     - dns:
-      - 192.168.2.254
+      - 8.8.8.8
       - 8.8.4.4
     - require:
       - dockerng: "Download hypriot/rpi-dockerui"

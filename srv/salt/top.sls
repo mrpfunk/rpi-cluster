@@ -4,12 +4,12 @@ base:
     - docker
 
   'kk':
-    - bind
     - nginx-vhost
     - postgres
     - gogs
     - registry
     - drone
+    # - bind
     # - nginx-proxy
     # - web
     # - crossbar

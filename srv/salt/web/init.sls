@@ -14,7 +14,7 @@
     - environment:
       - VIRTUAL_HOST: "bla.db01.{{ salt['pillar.get']('domain:name') }}"
     - dns:
-      - 192.168.2.254
+      - 8.8.8.8
       - 8.8.4.4
     - require:
       - dockerng: "Download rpi-nginx"

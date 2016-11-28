@@ -29,8 +29,10 @@
       - /var/docker/persistent/drone:/var/lib/drone
     - links:
       - gogs:gogs
+    - extra_hosts:
+      - gogs.flitzehack.de:192.168.2.254
     - dns:
-      - 192.168.2.254
+      - 8.8.8.8
       - 8.8.4.4
     - require:
       - file: "/var/docker/persistent/drone"

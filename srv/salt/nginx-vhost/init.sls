@@ -20,8 +20,10 @@
     - port_bindings:
       - 80:80/tcp
       - 443:443/tcp
+    - extra_hosts:
+      - kk:192.168.2.254
     - dns:
-      - 192.168.2.254
+      - 8.8.8.8
       - 8.8.4.4
     - require:
       - dockerng: "Download nginx"
