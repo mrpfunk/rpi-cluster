@@ -1,18 +1,18 @@
 "Download nginx-proxy":
   dockerng.image_present:
-    - name: bestlibre/rpi-nginx-proxy:bin
+    - name: jwilder/nginx-proxy
 
 "Run nginx-proxy":
   dockerng.running:
     - name: nginx-proxy
     - restart_policy: always
-    - image: bestlibre/rpi-nginx-proxy:bin
+    - image: jwilder/nginx-proxy
     - ports:
       - 80/tcp
     - port_bindings:
-      - 80:80/tcp
+      - 81:80/tcp
     - binds:
-      - /var/run/docker.sock:/tmp/docker.sock
+      - /var/run/docker.sock:/tmp/docker.sock:ro
     - require:
       - dockerng: "Download nginx-proxy"
 

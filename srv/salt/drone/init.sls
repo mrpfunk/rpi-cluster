@@ -31,9 +31,9 @@
       - gogs:gogs
     - extra_hosts:
       - gogs.flitzehack.de:192.168.2.254
+      - registry.flitzehack.de:192.168.2.254
     - dns:
-      - 8.8.8.8
-      - 8.8.4.4
+      - 192.168.2.254
     - require:
       - file: "/var/docker/persistent/drone"
       - dockerng: "Download drone/drone"

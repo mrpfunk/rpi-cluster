@@ -23,7 +23,7 @@ docker-py:
 
 docker_repo:
     pkgrepo.managed:
-      - name: 'deb http://get.docker.io/ubuntu docker main'
+      - name: 'deb https://apt.dockerproject.org/repo debian-stretch main'
       - file: '/etc/apt/sources.list.d/docker.list'
       - key_url: salt://docker/docker.pgp
       - require_in:

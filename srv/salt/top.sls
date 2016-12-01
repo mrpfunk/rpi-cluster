@@ -1,16 +1,16 @@
 base:
   '*':
     - basics
-    - docker
+    # - docker
 
   'kk':
+    - bind
     - nginx-vhost
     - postgres
     - gogs
     - registry
     - drone
-    # - bind
-    # - nginx-proxy
-    # - web
-    # - crossbar
+    - nginx-proxy
+    - crossbar
+    # - redis
 

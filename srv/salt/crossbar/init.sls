@@ -1,20 +1,32 @@
-"Download rpi-crossbar":
+"Download crossbar":
   dockerng.image_present:
-    - name: registry.flitzehack.de/rpi-crossbar
+    - name: registry.flitzehack.de/crossbar
 
-"Run rpi-crossbar":
+/var/docker/persistent/crossbar:
+  file.directory:
+    - dir_mode: 755
+    - makedirs: True
+
+"Run crossbar":
   dockerng.running:
-    - name: c1
+    - name: test1.cb
     - restart_policy: always
     - detach: True
-    - image: registry.flitzehack.de/rpi-crossbar
+    - image: registry.flitzehack.de/crossbar
     - ports:
       - 80/tcp
-      - 443/tcp
     - environment:
-      - VIRTUAL_HOST: "c1.db01.{{ salt['pillar.get']('domain:name') }}"
+      # - VIRTUAL_HOST: "test1.cb.{{ salt['pillar.get']('domain:name') }}"
+      - VIRTUAL_HOST: "test1.cb.flitzehack.de"
+    - binds:
+      - /var/docker/persistent/crossbar:/node
+      #- /var/docker/persistent/crossbar/.crossbar/config.json:/node/.crossbar/config.json
+      #- /var/docker/persistent/crossbar/wamplets:/node/wamplets
+      #- /var/docker/persistent/crossbar/log:/node/log
+    # - links:
+    #  - redis:redis
     - dns:
-      - 8.8.8.8
-      - 8.8.4.4
+      - 192.168.2.254
     - require:
-      - dockerng: "Download rpi-crossbar"
+      - file: "/var/docker/persistent/crossbar"
+      - dockerng: "Download crossbar"

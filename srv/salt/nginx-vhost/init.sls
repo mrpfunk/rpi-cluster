@@ -24,6 +24,6 @@
       - kk:192.168.2.254
     - dns:
       - 8.8.8.8
-      - 8.8.4.4
+      # - 192.168.2.254
     - require:
       - dockerng: "Download nginx"

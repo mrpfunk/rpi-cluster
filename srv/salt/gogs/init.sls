@@ -21,9 +21,10 @@
       - 3000:3000/tcp
     - links:
       - postgres:postgres
+   # - extra_hosts:
+   #   - drone.flitzehack.de:192.168.2.254
     - dns:
-      - 8.8.8.8
-      - 8.8.4.4
+      - 192.168.2.254
     - require:
       - file: "/var/docker/persistent/gogs"
       - dockerng: "Download gogs/gogs"
