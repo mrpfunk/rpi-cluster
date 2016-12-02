@@ -2,10 +2,6 @@
   dockerng.image_present:
     - name: registry.flitzehack.de/crossbar
 
-/var/docker/persistent/crossbar:
-  file.directory:
-    - dir_mode: 755
-    - makedirs: True
 
 "Run crossbar":
   dockerng.running:
@@ -27,5 +23,4 @@
     - dns:
       - 192.168.2.254
     - require:
-      - file: "/var/docker/persistent/crossbar"
       - dockerng: "Download crossbar"
