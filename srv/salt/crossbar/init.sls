@@ -17,7 +17,7 @@
     - binds:
       - /home/mnowak/src/crossbar/node:/node/.crossbar
       - /home/mnowak/src/ap:/node/web
-      - /home/mnowak/src/wamplets:/node/wamplets
+      - /home/mnowak/src/wamplets3:/node/wamplets
     - links:
       - redis:redis
     - dns:
