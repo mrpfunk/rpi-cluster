@@ -10,7 +10,7 @@
 "Run crossbar":
   dockerng.running:
     - name: test1.cb
-    - restart_policy: always
+    # - restart_policy: always
     - detach: True
     - image: registry.flitzehack.de/crossbar
     - ports:
@@ -19,12 +19,11 @@
       # - VIRTUAL_HOST: "test1.cb.{{ salt['pillar.get']('domain:name') }}"
       - VIRTUAL_HOST: "test1.cb.flitzehack.de"
     - binds:
-      - /var/docker/persistent/crossbar:/node
-      #- /var/docker/persistent/crossbar/.crossbar/config.json:/node/.crossbar/config.json
-      #- /var/docker/persistent/crossbar/wamplets:/node/wamplets
-      #- /var/docker/persistent/crossbar/log:/node/log
-    # - links:
-    #  - redis:redis
+      - /home/mnowak/src/crossbar/node:/node/.crossbar
+      - /home/mnowak/src/ap:/node/web
+      - /home/mnowak/src/wamplets:/node/wamplets
+    - links:
+      - redis:redis
     - dns:
       - 192.168.2.254
     - require:

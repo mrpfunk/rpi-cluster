@@ -12,6 +12,8 @@
     - name: redis
     - restart_policy: always
     - image: redis
+    - ports:
+      - 6379/tcp
     - binds:
       - /var/docker/persistent/redis:/data
     - dns:

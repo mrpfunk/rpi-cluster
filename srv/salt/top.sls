@@ -5,12 +5,12 @@ base:
 
   'kk':
     - bind
+    - redis
+    - nginx-proxy
     - nginx-vhost
     - postgres
     - gogs
     - registry
     - drone
-    - nginx-proxy
     - crossbar
-    # - redis
 
