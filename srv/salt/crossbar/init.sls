@@ -23,7 +23,7 @@
     - ports:
       - 6379/tcp
     - binds:
-      - /var/docker/persistent/redis-{{ usr }}:/data
+      - /var/docker/persistent/redis/{{ usr }}:/data
     - dns:
       - 192.168.2.254
     - require:
