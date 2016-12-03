@@ -5,7 +5,6 @@ base:
 
   'kk':
     - bind
-    - redis
     - nginx-proxy
     - nginx-vhost
     - postgres

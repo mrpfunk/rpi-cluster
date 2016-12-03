@@ -10,3 +10,4 @@ base:
     - schedule.updateip
     - schedule.pgdump
     - schedule.backup
+    - settings.clients

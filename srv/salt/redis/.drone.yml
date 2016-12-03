@@ -1,4 +1,0 @@
-build:
-  image: resin/rpi-raspbian:jessie
-  commands:
-    - echo "script that stuff"
