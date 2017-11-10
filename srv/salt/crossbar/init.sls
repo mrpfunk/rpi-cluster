@@ -42,13 +42,13 @@
       # - VIRTUAL_HOST: "test1.cb.{{ salt['pillar.get']('domain:name') }}"
       - VIRTUAL_HOST: "{{ usr }}.cb.flitzehack.de"
     - binds:
-      - /home/mnowak/src/crossbar/node:/node/.crossbar
-      - /home/mnowak/src/ap:/node/web
-      - /home/mnowak/src/wamplets3:/node/wamplets
+      - /home/mnowak/src/html:/node
     - links:
       - redis-{{ usr }}:redis
     - dns:
       - 192.168.2.254
+      - 4.4.4.4
+      - 8.8.8.8
     - require:
       - dockerng: "Download crossbar"
       - dockerng: "redis-{{ usr }}-run"
